@@ -1,0 +1,91 @@
+import java.util.concurrent.atomic.AtomicInteger;
+
+/**Edited Program from skeleton code that is a score class, has the shared variables for the game
+* @author Dennis Hammerschlag
+* @version 1.0
+* @since September 2021
+*/
+
+public class Score {
+	private AtomicInteger missedWords;
+	private AtomicInteger caughtWords;
+	private AtomicInteger gameScore;
+	
+	Score() {
+      missedWords=new AtomicInteger(0);
+      caughtWords=new AtomicInteger(0);
+      gameScore=new AtomicInteger(0);
+      
+	}
+	
+	// all getters and setters must be synchronized
+	
+   /** Method that gets the missed instance variable
+     * @param none
+     * @return missed counter
+     */
+     
+	public synchronized int  getMissed() {
+      return missedWords.get();
+	}
+   
+   /** Method that gets the caught instance variable
+     * @param none
+     * @return caught counter
+     */
+
+	public synchronized int getCaught() {
+		return caughtWords.get();
+	}
+	
+   /** Method that gets the total value
+     * @param none
+     * @return total value (caught+missed)
+     */
+     
+	public synchronized int getTotal() {
+      return (caughtWords.get()+missedWords.get());
+	}
+   
+   /** Method that gets the score instance variable
+     * @param none
+     * @return caught score
+     */
+
+	public synchronized int getScore() {
+		return gameScore.get();
+	}
+   
+   /** Method that gets increments the missed counter
+     * @param none
+     * @return none
+     */
+	
+	public synchronized void missedWord() {
+      missedWords.getAndIncrement();
+	}
+
+   /** Method that gets increments the caught and score counter
+     * @param int length (length of word)
+     * @return none
+     */
+     
+	public void caughtWord(int length) {
+      caughtWords.getAndIncrement();
+      gameScore.addAndGet(length);
+      
+	}
+   
+   /** Method that resets all counter variables to 0
+     * @param none
+     * @return none
+     */
+     
+
+	public void resetScore() {
+      missedWords=new AtomicInteger(0);
+      caughtWords=new AtomicInteger(0);
+      gameScore=new AtomicInteger(0);
+      
+	}
+}

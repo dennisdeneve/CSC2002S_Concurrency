@@ -1,0 +1,25 @@
+
+*** These modified files were found in JOE when it aborted on Mon Sep  6 02:30:33 2021
+*** JOE was aborted by UNIX signal 1
+
+*** File '(Unnamed)'
+joe printall.sh
+
+*** File '(Unnamed)'
+Makefile
+Makefile
+Sequential.java
+WordApp.java
+/home/dennis/CSC2002S/srcA2/src/.git/COMMIT_EDITMSG
+WordPanel.java
+WordPanel.java
+Score.java
+MakeFile
+Makefile
+Score.java
+
+*** File '* Startup Log *'
+Processing '/etc/joe/joerc'...
+Processing '/etc/joe/ftyperc'...
+Finished processing /etc/joe/ftyperc
+Finished processing /etc/joe/joerc
